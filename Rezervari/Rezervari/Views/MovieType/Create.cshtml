@@ -1,0 +1,16 @@
+﻿@model MovieTypeModel
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h3>Adauga Categorie Noua</h3>
+<form method="post">
+    <label>Nume Categorie</label>
+    <input asp-for="Name" type="text" class="form-control mb-3" placeholder="Nume Categorie" />
+    <label>Descriere</label>
+    <input asp-for="Description" type="text" class="form-control mb-3" placeholder="Descriere" />
+    <label for="MovieTypeId">Movie Type ID:</label>
+    <input type="text" id="MovieTypeId" name="movieTypeId" class="form-control" />
+
+    <button type="submit" class="btn btn-success w-100">Adauga</button>
+</form>

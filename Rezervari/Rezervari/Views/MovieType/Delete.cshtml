@@ -1,0 +1,15 @@
+﻿@model MovieTypeModel
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h3>Sterge Categorie</h3>
+<p>Sunteti sigur ca doriti sa stergeti aceasta categorie?</p>
+<form method="post">
+    <input asp-for="Id" hidden>
+    <label>Nume Categorie</label>
+    <input asp-for="Name" type="text" class="form-control mb-3" disabled />
+    <label>Descriere</label>
+    <input asp-for="Description" type="text" class="form-control mb-3" disabled />
+    <button type="submit" class="btn btn-danger w-100">Sterge</button>
+</form>

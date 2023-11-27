@@ -1,0 +1,35 @@
+﻿@model IEnumerable<MovieModel>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="d-flex justify-content-between mt-4">
+    <h4>Filme</h4>
+    <div>
+        <a asp-controller="Movie" asp-action="Create" class="btn btn-success">Film nou</a>
+    </div>
+</div>
+<table class="table table-bordered table-striped mt-4">
+    <thead>
+        <tr>
+            <th class="bg-primary text-white">Nume Film</th>
+            <th class="bg-primary text-white">Descriere</th>
+            <th class="bg-primary text-white">Operatiuni</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var movie in Model)
+        {
+            <tr>
+                <td class="bg-dark text-white">@movie.Name</td>
+                <td class="bg-dark text-white">@movie.Description</td>
+                <td>
+                    <a asp-controller="MovieType" asp-action="Update" asp-route-id="@movie.Id" class="btn btn-warning">Modifica</a>
+                    <a asp-controller="MovieType" asp-action="Delete" asp-route-id="@movie.Id" class="btn btn-danger">Sterge</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>
+
